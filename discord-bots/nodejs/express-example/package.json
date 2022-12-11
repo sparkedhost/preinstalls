@@ -1,0 +1,15 @@
+{
+  "name": "express-example",
+  "version": "1.0.0",
+  "description": "An example of a express server running on Sparked Host",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sparked Host",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  }
+}
