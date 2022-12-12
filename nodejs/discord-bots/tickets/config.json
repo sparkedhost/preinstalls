@@ -1,0 +1,13 @@
+{
+    "Bot": {
+        "Token": "BOT TOKEN",
+        "BotID": "BOT USER ID"
+    },
+    "Config": {
+        "supportRole": "SUPPORT ROLE ID",
+        "supportChannel": "CHANNEL ID FOR TICKET EMBED",
+        "embedTitle": "TITLE FOR TICKET EMBED",
+        "embedColor": "COLOR FOR TICKET EMBED",
+        "embedDescription": "DESCRIPTION FOR TICKET EMBED"
+    }
+}

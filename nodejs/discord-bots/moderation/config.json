@@ -1,0 +1,9 @@
+{
+    "Bot": {
+        "Token": "BOT TOKEN",
+        "BotID": "BOT USER ID"
+    },
+    "Config": {
+        "staffRole": "STAFF ROLE ID"
+    }
+}
