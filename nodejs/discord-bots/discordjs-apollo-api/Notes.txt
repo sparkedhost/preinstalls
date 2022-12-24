@@ -1,0 +1,4 @@
+1. Make sure you provide the correct values on the Startup Tab (such as the Discord Bot token, Pterodactyl API Keys, etc.)
+2. Ensure that when you add the bot to the server, it has the "Send Messages", "Manage Messages" and "Embed Links" permissions.
+3. Arrow functions are used in the code so that you can use await without using an async function.
+4. Some portions of the code used in the bot are based from https://discordjs.guide
