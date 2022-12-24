@@ -58,20 +58,32 @@ chunks:
   auto-save-interval: default
   delay-chunk-unloads-by: 10s
   entity-per-chunk-save-limit:
-    arrow: -1
-    ender_pearl: -1
-    experience_orb: -1
-    fireball: -1
-    small_fireball: -1
-    snowball: -1
+    area_effect_cloud: 8
+    arrow: 16
+    dragon_fireball: 3
+    egg: 8
+    ender_pearl: 8
+    experience_bottle: 3
+    experience_orb: 16
+    eye_of_ender: 8
+    fireball: 8
+    firework_rocket: 8
+    llama_spit: 3
+    potion: 8
+    shulker_bullet: 8
+    small_fireball: 8
+    snowball: 8
+    spectral_arrow: 16
+    trident: 16
+    wither_skull: 4
   fixed-chunk-inhabited-time: -1
-  max-auto-save-chunks-per-tick: 24
+  max-auto-save-chunks-per-tick: 18
   prevent-moving-into-unloaded-chunks: false
 collisions:
   allow-player-cramming-damage: false
   allow-vehicle-collisions: true
   fix-climbing-bypassing-cramming-rule: false
-  max-entity-collisions: 8
+  max-entity-collisions: 4
   only-players-collide: false
 entities:
   armor-stands:
@@ -130,9 +142,34 @@ entities:
   spawning:
     all-chunks-are-slime-chunks: false
     alt-item-despawn-rate:
-      enabled: false
+      enabled: true
       items:
         cobblestone: 300
+        netherrack: 300
+        sand: 300
+        red_sand: 300
+        gravel: 300
+        dirt: 300
+        grass: 300
+        pumpkin: 300
+        melon_slice: 300
+        kelp: 300
+        bamboo: 300
+        sugar_cane: 300
+        twisting_vines: 300
+        weeping_vines: 300
+        oak_leaves: 300
+        spruce_leaves: 300
+        birch_leaves: 300
+        jungle_leaves: 300
+        acacia_leaves: 300
+        dark_oak_leaves: 300
+        mangrove_leaves: 300
+        cactus: 300
+        diorite: 300
+        granite: 300
+        andesite: 300
+        scaffolding: 600
     count-all-mobs-for-spawning: false
     creative-arrow-despawn-rate: default
     despawn-ranges:
@@ -140,25 +177,25 @@ entities:
         hard: 128
         soft: 32
       axolotls:
-        hard: 128
+        hard: 96
         soft: 32
       creature:
-        hard: 128
+        hard: 96
         soft: 32
       misc:
-        hard: 128
+        hard: 96
         soft: 32
       monster:
         hard: 128
         soft: 32
       underground_water_creature:
-        hard: 128
+        hard: 56
         soft: 32
       water_ambient:
-        hard: 64
+        hard: 56
         soft: 32
       water_creature:
-        hard: 128
+        hard: 56
         soft: 32
     disable-mob-spawner-spawn-egg-transformation: false
     duplicate-uuid:
@@ -207,7 +244,7 @@ environment:
     enabled: true
   generate-flat-bedrock: false
   nether-ceiling-void-damage-height: disabled
-  optimize-explosions: false
+  optimize-explosions: true
   portal-create-radius: 16
   portal-search-radius: 128
   portal-search-vanilla-dimension-scaling: true
@@ -256,7 +293,7 @@ misc:
   disable-sprint-interruption-on-attack: false
   light-queue-size: 20
   max-leash-distance: 10.0
-  redstone-implementation: VANILLA
+  redstone-implementation: ALTERNATE_CURRENT
   shield-blocking-delay: 5
   show-sign-click-command-failure-msgs-to-player: false
   update-pathfinding-on-block-update: true
@@ -272,7 +309,7 @@ tick-rates:
     villager:
       validatenearbypoi: -1
   container-update: 1
-  grass-spread: 1
+  grass-spread: 2
   mob-spawner: 1
   sensor:
     villager:
