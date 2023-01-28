@@ -1,0 +1,20 @@
+name: Deployment test
+
+on:
+  push:
+    branches:
+      - manifest
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Minio Deploy
+        uses: lovellfelix/minio-deploy-action@v1
+        with:
+          endpoint: ${{ secrets.MINIO_ENDPOINT }}
+          access_key: ${{ secrets.MINIO_ACCESS_KEY }}
+          secret_key: ${{ secrets.MINIO_SECRET_KEY }}
+          bucket: ${{ secrets.MINIO_BUCKET }}
+          source_dir: 'additional-configs/pteroignore'
+          target_dir: '/pteroignore'
