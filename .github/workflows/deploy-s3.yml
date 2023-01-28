@@ -14,7 +14,7 @@ jobs:
       - name: Install zip
         uses: montudor/action-zip@v1
       - name: Create archives
-        run: mkdir archives; for i in */; do zip -r "archives/${i%/}.zip" "$i*"; done
+        run: mkdir archives; for i in */; do zip -r "archives/${i%/}.zip" "$i"; done
       - name: Minio Deploy
         uses: lovellfelix/minio-deploy-action@v1
         with:
