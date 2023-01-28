@@ -11,6 +11,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
+      - name: Install dependencies
+        run: apt install zip -y
+      - name: Create archives
+        run: for i in */; do zip -r "archives/${i%/}.zip" "$i"; done
       - name: Minio Deploy
         uses: lovellfelix/minio-deploy-action@v1
         with:
@@ -18,5 +22,5 @@ jobs:
           access_key: ${{ secrets.MINIO_ACCESS_KEY }}
           secret_key: ${{ secrets.MINIO_SECRET_KEY }}
           bucket: ${{ secrets.MINIO_BUCKET }}
-          source_dir: '.'
+          source_dir: './archives'
           target_dir: '/preinstalls'
