@@ -1,0 +1,22 @@
+name: Deploy to S3
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Minio Deploy
+        uses: lovellfelix/minio-deploy-action@v1
+        with:
+          endpoint: ${{ secrets.MINIO_ENDPOINT }}
+          access_key: ${{ secrets.MINIO_ACCESS_KEY }}
+          secret_key: ${{ secrets.MINIO_SECRET_KEY }}
+          bucket: ${{ secrets.MINIO_BUCKET }}
+          source_dir: '.'
+          target_dir: '/preinstalls'
