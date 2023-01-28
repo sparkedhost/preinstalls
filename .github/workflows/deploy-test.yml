@@ -1,4 +1,4 @@
-name: Deployment test
+name: Deploy to S3
 
 on:
   push:
@@ -11,8 +11,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: List directory
-        run: ls
       - name: Minio Deploy
         uses: lovellfelix/minio-deploy-action@v1
         with:
@@ -20,5 +18,5 @@ jobs:
           access_key: ${{ secrets.MINIO_ACCESS_KEY }}
           secret_key: ${{ secrets.MINIO_SECRET_KEY }}
           bucket: ${{ secrets.MINIO_BUCKET }}
-          source_dir: './additional-configs/pteroignore'
-          target_dir: '/pteroignore'
+          source_dir: '.'
+          target_dir: '/preinstalls'
