@@ -11,8 +11,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: Install dependencies
-        run: apt install zip -y
+      - name: Install zip
+        uses: montudor/action-zip@v1
       - name: Create archives
         run: for i in */; do zip -r "archives/${i%/}.zip" "$i"; done
       - name: Minio Deploy
