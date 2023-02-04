@@ -254,3 +254,6 @@ dist
 .yarn/install-state.gz
 .pnp.*
 # END OF NODE GITIGNORE
+
+archives/
+*.zip
