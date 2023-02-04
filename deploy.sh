@@ -2,7 +2,11 @@
 
 oldDir=$(pwd)
 
-rm -rf archives >/dev/null 2>&1
+function cleanup() {
+    rm -rf archives >/dev/null 2>&1
+}
+
+cleanup
 mkdir archives
 
 for d in $(find . -type d); do
@@ -17,3 +21,5 @@ for d in $(find . -type d); do
     echo ""
   fi
 done
+
+cleanup
