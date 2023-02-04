@@ -22,5 +22,7 @@ jobs:
           access_key: ${{ secrets.MINIO_ACCESS_KEY }}
           secret_key: ${{ secrets.MINIO_SECRET_KEY }}
           bucket: ${{ secrets.MINIO_BUCKET }}
-          source_dir: './archives'
+          source_dir: './out'
           target_dir: '/preinstalls'
+      - name: Clean up
+        run: rm -rf ./out

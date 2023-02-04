@@ -255,5 +255,5 @@ dist
 .pnp.*
 # END OF NODE GITIGNORE
 
-archives/
+out/
 *.zip
