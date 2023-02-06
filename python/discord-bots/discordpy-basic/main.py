@@ -20,10 +20,12 @@ bot = commands.Bot(command_prefix="?", description=description, intents=intents)
 async def on_ready():
     print(f"Logged in as {bot.user} (ID: {bot.user.id})")
 
+
 @bot.command()
 async def hello(ctx):
     """Hello there, human!"""
     await ctx.reply(f"Hello there, {ctx.author.name}!")
+
 
 @bot.command()
 async def add(ctx, left: int, right: int):
@@ -38,4 +40,4 @@ async def choose(ctx, *choices: str):
 
 
 load_dotenv()
-bot.run(os.getenv('BOT_TOKEN'))
+bot.run(os.getenv("BOT_TOKEN"))
