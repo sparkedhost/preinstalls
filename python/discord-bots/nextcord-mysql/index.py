@@ -5,9 +5,6 @@ from asyncmy import connect
 import os
 from dotenv import load_dotenv
 
-
-TESTING_GUILD_ID = 1234567890  # change to example
-
 description = """An example bot sparkedhost preinstalls
 
 Author:
@@ -22,11 +19,11 @@ bot = commands.Bot(description=description)
 async def on_ready():
     global con
     con = await connect(
-        host="mariadb.sparkedhost.com",
-        port=20012,
-        user="nextcord",
-        password="nextcordpass",
-        database="nextcord",
+        host=os.getenv("DB_HOST"),
+        port=os.getenv("DB_PORT"),
+        user=os.getenv("DB_USER"),
+        password=os.getenv("DB_PASSWORD"),
+        database=os.getenv("DB_DATABASE"),
     )
     cur = con.cursor()
     await cur.execute(
