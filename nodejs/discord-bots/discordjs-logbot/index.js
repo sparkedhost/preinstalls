@@ -115,12 +115,12 @@ client.on('message', message => {
         // replace every "ॐ" with a newline
         var logs = lines.join('\n');
         // send the archive to hastebin
-        fetch('http://132.145.29.171:1035/documents', {
+        fetch('https://paste.sparked.host/documents', {
             method: 'POST',
             body: logs
         }).then(res => res.json()).then(json => {
             // send the hastebin link to the channel
-            message.channel.send('http://132.145.29.171:1035/' + json.key);
+            message.channel.send('https://paste.sparked.host/' + json.key);
         });
     }
     // if the message is prefix + "dump" and the message authors id is config.ownerid, send ./logs/message.guild.id.txt to the message author
@@ -131,12 +131,12 @@ client.on('message', message => {
         // replace every "ॐ" with a newline
         var logs = lines.join('\n');
         // send the archive to hastebin
-        fetch('http://132.145.29.171:1035/documents', {
+        fetch('https://paste.sparked.host/documents', {
             method: 'POST',
             body: logs
         }).then(res => res.json()).then(json => {
             // send the hastebin link to the message author
-            message.author.send('http://132.145.29.171:1035/' + json.key);
+            message.author.send('https://paste.sparked.host/' + json.key);
         });
     }
     // if the message is prefix + "downloadall", send ./logs/guildname.txt to hastebin
@@ -146,12 +146,12 @@ client.on('message', message => {
         // readd new lines
         var logs = lines.join('\n');
         // send the archive to hastebin
-        fetch('http://132.145.29.171:1035/documents', {
+        fetch('https://paste.sparked.host/documents', {
             method: 'POST',
             body: logs
         }).then(res => res.json()).then(json => {
             // send the hastebin link to the channel
-            message.channel.send('http://132.145.29.171:1035/' + json.key);
+            message.channel.send('https://paste.sparked.host/' + json.key);
         });
     }
     // if the message is prefix + "help", send a help message to the channel
