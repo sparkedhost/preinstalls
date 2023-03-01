@@ -175,29 +175,4 @@ client.on('message', message => {
     }
 });
 
-http.createServer(function (req, res) {
-    // if the request is for the index page, send the index page
-    if (req.url == '/') {
-        res.writeHead(200, {
-            'Content-Type': 'text/html'
-        });
-        res.write('<h1>403 Forbidden</h1>');
-        res.end();
-    }
-    // if the request is for any file ending with .txt in the logs folder, send the file
-    if (req.url.includes('.txt') && req.url.includes('logs/')) {
-        var file = req.url.substring(1);
-        fs.readFile(file, function (err, data) {
-            if (err) {
-                res.writeHead(404, { 'Content-Type': 'text' });
-                res.write('<h1>404 Not Found</h1>');
-                res.end();
-            } else {
-                res.writeHead(200, { 'Content-Type': 'text' });
-                res.write(data);
-                res.end();
-            }
-        });
-    }
-}).listen(config.webport);
 client.login(config.token);
