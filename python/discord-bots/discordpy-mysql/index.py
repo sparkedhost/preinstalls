@@ -1,5 +1,5 @@
-import nextcord
-from nextcord.ext import commands
+import discord
+from discord.ext import commands
 from asyncmy import connect
 
 import os
@@ -12,7 +12,8 @@ Author:
     Discord Jpuf#0001
 """
 
-bot = commands.Bot(description=description)
+intents = discord.Intents.default()
+bot = commands.Bot(command_prefix="/", description=description, intents=intents)
 
 
 @bot.event
@@ -37,8 +38,8 @@ async def on_ready():
     print(f"Logged in as {bot.user}")
 
 
-@bot.slash_command(description="get the count", guild_ids=[os.getenv("TESTING_GUILD_ID")])
-async def get_data(interaction: nextcord.Interaction):
+@bot.tree.command(description="get the count")
+async def get_data(interaction: discord.Interaction):
     cur = con.cursor()
     await cur.execute(
         """
@@ -46,11 +47,11 @@ async def get_data(interaction: nextcord.Interaction):
     """
     )
     ret = await cur.fetchone()
-    await interaction.send(f"The data stored in the database is: {ret[0]}")
+    await interaction.response.send_message(f"The data stored in the database is: {ret[0]}")
 
 
-@bot.slash_command(description="increment the count by 1", guild_ids=[os.getenv("TESTING_GUILD_ID")])
-async def inc_data(interaction: nextcord.Interaction):
+@bot.tree.command(description="increment the count by 1")
+async def inc_data(interaction: discord.Interaction):
     cur = con.cursor()
     await cur.execute(
         """
@@ -58,7 +59,7 @@ async def inc_data(interaction: nextcord.Interaction):
     """
     )
     await con.commit()
-    await interaction.send("Set Value!")
+    await interaction.response.send_message("Set Value!")
 
 
 load_dotenv()
