@@ -1,0 +1,15 @@
+{
+  "name": "rjwebserver-example",
+  "version": "1.0.0",
+  "description": "An example of a rjweb-server webserver running on Sparked Host",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sparked Host (0x4096)",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "rjweb-server": "^3.1.8"
+  }
+}
