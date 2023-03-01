@@ -47,7 +47,9 @@ async def get_data(interaction: discord.Interaction):
     """
     )
     ret = await cur.fetchone()
-    await interaction.response.send_message(f"The data stored in the database is: {ret[0]}")
+    await interaction.response.send_message(
+        f"The data stored in the database is: {ret[0]}"
+    )
 
 
 @bot.tree.command(description="increment the count by 1")

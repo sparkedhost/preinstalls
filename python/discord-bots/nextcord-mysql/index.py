@@ -37,7 +37,9 @@ async def on_ready():
     print(f"Logged in as {bot.user}")
 
 
-@bot.slash_command(description="get the count", guild_ids=[os.getenv("TESTING_GUILD_ID")])
+@bot.slash_command(
+    description="get the count", guild_ids=[os.getenv("TESTING_GUILD_ID")]
+)
 async def get_data(interaction: nextcord.Interaction):
     cur = con.cursor()
     await cur.execute(
@@ -49,7 +51,9 @@ async def get_data(interaction: nextcord.Interaction):
     await interaction.send(f"The data stored in the database is: {ret[0]}")
 
 
-@bot.slash_command(description="increment the count by 1", guild_ids=[os.getenv("TESTING_GUILD_ID")])
+@bot.slash_command(
+    description="increment the count by 1", guild_ids=[os.getenv("TESTING_GUILD_ID")]
+)
 async def inc_data(interaction: nextcord.Interaction):
     cur = con.cursor()
     await cur.execute(
