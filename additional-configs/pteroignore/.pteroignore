@@ -13,3 +13,10 @@ usercache.json
 plugins/dynmap/web/*
 plugins/CoreProtect/database.db
 bluemap/
+?/.cache
+.trash/
+versions/
+.apollologs/
+__pycache__/
+orebfuscator_cache/
+plugins/squaremap/web/tiles/*

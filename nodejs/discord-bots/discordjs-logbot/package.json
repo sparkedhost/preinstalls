@@ -1,0 +1,17 @@
+{
+  "name": "discordjs-logbot",
+  "version": "1.0.0",
+  "description": "A bot that logs messages sent into a .txt file, sorted by channel ID",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Givinghawk",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "discord.js": "^13.12.0",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "node-fetch": "^2.6.7"
+  }
+}
