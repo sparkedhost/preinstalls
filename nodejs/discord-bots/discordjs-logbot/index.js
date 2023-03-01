@@ -102,7 +102,7 @@ client.on('message', message => {
     if(message.author.bot) return;
     // set the prefix to the prefix in config.json
     var prefix = config.prefix;
-    // if the message is "stop" and the message authors id is 545636523580850186 then stop the bot
+    // if the message is "stop" and the message authors id is equal to config.ownerid then stop the bot
     if (message.content == prefix + 'stop' && message.author.id == config.ownerid) {
         message.reply('Stopping...');
         client.destroy();
