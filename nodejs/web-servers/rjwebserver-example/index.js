@@ -21,6 +21,18 @@ routes.routeBlock('/api')
   .add('GET', '/', (ctr) => { // This will be available on /api since it combines every prefix to the top
     ctr.print('Welcome to the API!')
   })
+  .subRouteBlock('/user')
+    .auth((ctr) => { // Requires Additional Authentication, not just the one above
+      if (!ctr.queries.has('user')) return ctr.status(422).print('User Query (?user=) is missing!')
+
+      return ctr.status(200) // If everything is valid, return 200 status (ok)
+    })
+    .add('GET', '/infos', (ctr) => {
+      ctr.print({
+        username: ctr.queries.get('user'),
+        password: '123'
+      })
+    })
 
 routes.routeBlock('/homepage')
   .static('./static', {
