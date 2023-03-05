@@ -6,10 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Sparked Host (0x4096)",
+  "author": "0x4096",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.3",
-    "rjweb-server": "^3.1.8"
+    "rjweb-server": "^4.0.3"
   }
 }
