@@ -10,7 +10,7 @@
   "author": "Alecz R. - Sparked Host",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^14.7.1",
+    "discord.js": "^14.8.0",
     "dotenv": "^16.0.3",
     "nodeactyl": "^3.3.0"
   }
