@@ -130,7 +130,7 @@ client.login(process.env.BOT_TOKEN).then(async () => {
         // The put method is used to fully refresh all commands in the guild with the current set
         const data = await rest.put(
             // Routes.applicationCommands(client.application.id),
-            Routes.applicationGuildCommands(client.application.id, '950326803375988797'),
+            Routes.applicationGuildCommands(client.application.id, process.env.SERVER_ID),
             { body: commands },
         );
 
