@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.3",
-    "rjweb-server": "^4.0.3"
+    "rjweb-server": "^8.0.0"
   }
 }
