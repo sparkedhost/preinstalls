@@ -1,5 +1,4 @@
 .cache/
-.local/
 install.log
 .npm/
 node_modules/
@@ -20,3 +19,6 @@ versions/
 __pycache__/
 orebfuscator_cache/
 plugins/squaremap/web/tiles/*
+.npmrc/
+.yarn/
+.yarnrc/
