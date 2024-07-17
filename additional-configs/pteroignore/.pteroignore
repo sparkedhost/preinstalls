@@ -22,3 +22,4 @@ plugins/squaremap/web/tiles/*
 .npmrc/
 .yarn/
 .yarnrc/
+plugins/FastAsyncWorldEdit/history/
